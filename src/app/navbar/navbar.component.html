@@ -1,0 +1,25 @@
+<nav class="fixed top-0 left-0 w-full bg-white flex-wrap md:shadow-md z-50 flex justify-center py-2">
+  <button (click)="triggerNavbar()" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm ml-auto mr-4 text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none" aria-controls="navbar-default" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+    </svg>
+  </button>  
+  <div [class.hidden]="isHidden" class="hidden w-full md:block md:w-auto mx-4">
+    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-100 md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-white">
+      @for(link of navLinks; track link.title){
+      <li>
+        <a
+          [routerLink]="link.url"
+          routerLinkActive="active"
+          class="block py-2 px-3 text-slate-700 rounded hover:bg-gray-200 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+        >
+          {{ link.title }}
+        </a>
+      </li>}
+    </ul>
+  </div>
+</nav>
+
+
+

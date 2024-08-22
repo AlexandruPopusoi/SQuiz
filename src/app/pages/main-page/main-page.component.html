@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+
+<section class="bg-gray-100 flex flex-wrap flex-col md:flex-row gap-4 items-center justify-evenly min-h-screen py-4">
+    @for(card of cardsText; track card.title){
+    <a
+    [routerLink]="card.url"
+    >
+        <app-card [title]="card.title" [text]="card.text"></app-card>
+    </a>
+    }
+</section>
+
