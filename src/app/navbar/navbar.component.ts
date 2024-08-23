@@ -19,7 +19,6 @@ export class NavbarComponent {
   ];
 
   triggerNavbar(){
-    if(this.isHidden === false) this.isHidden = true 
-    else this.isHidden = false 
+    this.isHidden = !this.isHidden;
   }
 }

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from '../../navbar/navbar.component';
 import { CollapsiblePanelComponent } from '../../create/collapsible-panel/collapsible-panel.component';
 import { QuizProcessorService } from '../../create/quiz-processor.service';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-create-page',
   standalone: true,
-  imports: [NavbarComponent, CollapsiblePanelComponent],
+  imports: [NavbarComponent, CollapsiblePanelComponent, RouterLink],
   templateUrl: './create-page.component.html',
   styleUrl: './create-page.component.css'
 })
@@ -17,8 +18,7 @@ export class CreatePageComponent {
   constructor(protected quizProcessorService: QuizProcessorService){}
 
   trigger(){
-    if(this.isHidden === false) this.isHidden = true 
-    else this.isHidden = false 
+    this.isHidden = !this.isHidden;
   }
 
   addTitle(event:any){

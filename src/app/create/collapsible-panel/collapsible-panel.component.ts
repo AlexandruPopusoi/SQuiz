@@ -15,7 +15,7 @@ export class CollapsiblePanelComponent {
   questionTitle = 'Question';
   questionType = 'Quiz';
   questionNumber = input.required<number>();
-  
+
   constructor(public quizProcessorService: QuizProcessorService){}
 
   onSelectPanel(){
@@ -23,8 +23,7 @@ export class CollapsiblePanelComponent {
   }
 
   trigger(){
-    if(this.isHidden === false) this.isHidden = true 
-    else this.isHidden = false 
+    this.isHidden = !this.isHidden;
   }
 
   onUpdate(event:any){
