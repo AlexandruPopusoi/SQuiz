@@ -1,15 +1,25 @@
-import { Component, Output, EventEmitter, input } from '@angular/core';
+import {Component, Output, EventEmitter, input, ViewChild} from '@angular/core';
 import { AnswerInputComponent } from "../answer-input/answer-input.component";
 import { QuizProcessorService } from '../quiz-processor.service';
+import {
+  MatAccordion, MatExpansionModule,
+} from "@angular/material/expansion";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
+import {provideNativeDateAdapter} from "@angular/material/core";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 @Component({
   selector: 'app-collapsible-panel',
   standalone: true,
-  imports: [AnswerInputComponent],
+  imports: [AnswerInputComponent, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule],
   templateUrl: './collapsible-panel.component.html',
-  styleUrl: './collapsible-panel.component.css'
+  styleUrl: './collapsible-panel.component.css',
+  providers: [provideNativeDateAdapter()],
 })
 export class CollapsiblePanelComponent {
+  // @ViewChild(MatAccordion) accordion: MatAccordion;
   @Output() select = new EventEmitter();
   isHidden:boolean = true;
   questionTitle = 'Question';

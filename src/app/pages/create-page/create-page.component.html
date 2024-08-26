@@ -7,6 +7,6 @@
     @for(elem of quizProcessorService.questionsArray; track elem; let id = $index){
         <app-collapsible-panel [questionNumber]="id"></app-collapsible-panel>
     }
-    <button type="button" (click)="quizProcessorService.addQuestion()" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 max-w-32">Add</button>
-    <button type="button" (click)="quizProcessorService.finishQuiz()" [routerLink]="'/app-modes-page'" class="focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 max-w-32">Finish</button>
+    <button mat-stroked-button color="accent" (click)="quizProcessorService.addQuestion()" class="font-medium text-sm px-5 py-2.5 me-2 max-w-32">Add</button>
+    <button mat-raised-button color="primary" (click)="quizProcessorService.finishQuiz()" [routerLink]="'/app-modes-page'" class="font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 max-w-32">Finish</button>
 </div>
