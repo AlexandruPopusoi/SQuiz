@@ -1,6 +1,11 @@
-<div class="col-span-5 flex mx-4 my-2">
-    <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 border-e-0 rounded-s-md">
-      <input [checked]="onDisable(answerId())" [disabled]="input.length<=0" (change)="onCheck($event)" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
-    </span>
-    <input (blur)="addAnswer($event)" type="text" [value]="answerText()" [(ngModel)]="input" id="answer" class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5" placeholder="Answer">
-</div>
+<!--<div class="col-span-5 mx-4 my-2">-->
+<!--    <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border rounded-e-0 border-gray-300 border-e-0 rounded-s-md">-->
+<!--      <input [checked]="onDisable(answerId())" [disabled]="input.length<=0" (change)="onCheck($event)" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">-->
+<!--    </span>-->
+<!--    <input (blur)="addAnswer($event)" type="text" [value]="answerText()" [(ngModel)]="input" id="answer" class="rounded-none rounded-e-lg bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5" placeholder="Answer">-->
+  <mat-checkbox class="example-margin" [checked]="isChecked"  (change)="onCheck($event)" (toggle)="isChecked=true" ></mat-checkbox>
+  <mat-form-field class="col-span-4">
+    <mat-label>Answer</mat-label>
+    <input matInput (blur)="addAnswer($event); unchecking()" type="text" [value]="answerText()" [(ngModel)]="input" id="answer">
+  </mat-form-field>
+<!--</div>-->

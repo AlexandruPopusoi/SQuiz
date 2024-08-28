@@ -9,11 +9,13 @@ import {MatIconModule} from "@angular/material/icon";
 import {provideNativeDateAdapter} from "@angular/material/core";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import {MatSelectModule} from '@angular/material/select';
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-collapsible-panel',
   standalone: true,
-  imports: [AnswerInputComponent, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule],
+  imports: [AnswerInputComponent, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule, MatSelectModule, FormsModule],
   templateUrl: './collapsible-panel.component.html',
   styleUrl: './collapsible-panel.component.css',
   providers: [provideNativeDateAdapter()],
