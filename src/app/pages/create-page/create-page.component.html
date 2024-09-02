@@ -2,11 +2,15 @@
 
 
 <div id="accordion-open" data-accordion="open" class="flex flex-col px-4 pb-4 pt-12 gap-1">
-    <label class="col-span-2 mb-2 text-base font-medium text-gray-900 mt-2">Quiz title:</label>
-    <input (blur)="addTitle($event)" type="text" class="rounded-xl  bg-gray-50 border text-gray-900 focus:ring-blue-500 focus:border-blue-500 min-w-0 w-full text-sm border-gray-300 p-2.5" placeholder="Title">
-    @for(elem of quizProcessorService.questionsArray; track elem; let id = $index){
+  <mat-form-field class="w-full">
+    <mat-label>Quiz title</mat-label>
+    <input matInput (blur)="addTitle($event)">
+  </mat-form-field>
+
+  @for(elem of quizProcessorService.questionsArray; track elem; let id = $index){
         <app-collapsible-panel [questionNumber]="id"></app-collapsible-panel>
     }
-    <button mat-stroked-button color="accent" (click)="quizProcessorService.addQuestion()" class="font-medium text-sm px-5 py-2.5 me-2 max-w-32">Add</button>
-    <button mat-raised-button color="primary" (click)="quizProcessorService.finishQuiz()" [routerLink]="'/app-modes-page'" class="font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 max-w-32">Finish</button>
+
+  <button mat-stroked-button color="accent" (click)="quizProcessorService.addQuestion()" class="font-medium text-sm px-5 py-2.5 me-2 max-w-32">Add</button>
+  <button mat-raised-button color="primary" (click)="quizProcessorService.finishQuiz()" [routerLink]="'/app-modes-page'" class="font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 max-w-32">Finish</button>
 </div>

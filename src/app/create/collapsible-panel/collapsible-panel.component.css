@@ -1,15 +1,10 @@
-.example-headers-align .mat-expansion-panel-header {
+.header .mat-expansion-panel-header {
   justify-content: space-between;
   align-items: center;
   height: 5rem;
+  font-size: 1.25rem;
 }
 
 .mat-c .mat-content {
-
   height: 5rem;
 }
-
-
-/*.mat-icon {*/
-/*  vertical-align: middle;*/
-/*}*/

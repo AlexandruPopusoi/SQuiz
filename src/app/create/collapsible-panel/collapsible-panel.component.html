@@ -1,9 +1,9 @@
-<mat-accordion class="example-headers-align" multi>
+<mat-accordion class="header" multi>
   <mat-expansion-panel>
     <mat-expansion-panel-header>
 
-      <mat-panel-title>
-        <mat-icon>help</mat-icon>
+      <mat-panel-title >
+        <mat-icon class="mr-4">help</mat-icon>
         {{questionTitle}}
       </mat-panel-title>
       <button mat-icon-button (click)="quizProcessorService.deleteQuestion(questionNumber())" class="flex items-center text-white font-medium px-3 py-2.5 max-w-32 mx-4">
@@ -11,41 +11,33 @@
       </button>
     </mat-expansion-panel-header>
 
-  <div class="grid grid-cols-5 gap-4 pb-1.5 ">
+    <div class="grid grid-cols-5 gap-4 pb-1.5 ">
 
-<!--    <label class="col-span-3 mb-2 text-base font-medium text-gray-900 mx-4 mt-2">Question title:</label>-->
-<!--    <label class="col-span-2 mb-2 text-base font-medium text-gray-900 mx-4 mt-2">Type of question:</label>-->
+      <mat-form-field class="col-span-5 md:col-span-3 block">
+        <mat-label>Question title</mat-label>
+        <input matInput (input)="onUpdate($event)" (blur)="addQuestionTitle($event)">
+      </mat-form-field>
 
-    <mat-form-field class="col-span-3 block">
-      <mat-label>Question title</mat-label>
-      <input matInput (input)="onUpdate($event)" (blur)="addQuestionTitle($event)">
-    </mat-form-field>
+      <mat-form-field class="col-span-5 md:col-span-2">
+        <mat-label>Type</mat-label>
+          <mat-select (change)="updateInputBoxes($event)" [(value)]="questionType" id="questionType" required>
+            <mat-option value="Quiz">Quiz</mat-option>
+            <mat-option value="tofAnswer">True or false</mat-option>
+          </mat-select>
+      </mat-form-field>
 
-    <mat-form-field class="col-span-2">
-      <mat-label>Type</mat-label>
-        <mat-select (change)="updateInputBoxes($event)" [(value)]="questionType" id="questionType" required>
-          <mat-option value="Quiz">Quiz</mat-option>
-          <mat-option value="tofAnswer">True or false</mat-option>
-        </mat-select>
-    </mat-form-field>
-
-    @switch(questionType){
-      @case ("Quiz") {
-          <app-answer-input class="col-span-5" [qId]="questionNumber()" [answerId]="1"></app-answer-input>
-          <app-answer-input class="col-span-5" [qId]="questionNumber()" [answerId]="2"></app-answer-input>
-          <app-answer-input class="col-span-5" [qId]="questionNumber()" [answerId]="3"></app-answer-input>
-          <app-answer-input class="col-span-5" [qId]="questionNumber()" [answerId]="4"></app-answer-input>
+      @switch(questionType){
+        @case ("Quiz") {
+            <app-answer-input class="col-span-5 flex items-center" [qId]="questionNumber()" [answerId]="1"></app-answer-input>
+            <app-answer-input class="col-span-5 flex items-center" [qId]="questionNumber()" [answerId]="2"></app-answer-input>
+            <app-answer-input class="col-span-5 flex items-center" [qId]="questionNumber()" [answerId]="3"></app-answer-input>
+            <app-answer-input class="col-span-5 flex items-center" [qId]="questionNumber()" [answerId]="4"></app-answer-input>
+        }
+        @case ("tofAnswer") {
+          <app-answer-input class="col-span-5 flex items-center" [qId]="questionNumber()" [answerId]="1" [answerText]="'True'"></app-answer-input>
+          <app-answer-input class="col-span-5 flex items-center" [qId]="questionNumber()" [answerId]="2" [answerText]="'False'"></app-answer-input>
+        }
       }
-      @case ("tofAnswer") {
-        <app-answer-input class="col-span-5" [qId]="questionNumber()" [answerId]="1" [answerText]="'True'"></app-answer-input>
-        <app-answer-input class="col-span-5" [qId]="questionNumber()" [answerId]="2" [answerText]="'False'"></app-answer-input>
-      }
-      @default {
-      }
-    }
-
-
-  </div>
-
+    </div>
   </mat-expansion-panel>
 </mat-accordion>
