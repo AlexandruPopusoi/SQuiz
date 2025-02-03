@@ -8,11 +8,10 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 
 @Component({
-  selector: 'app-create-page',
-  standalone: true,
-  imports: [NavbarComponent, CollapsiblePanelComponent, RouterLink, MatButtonModule, MatFormFieldModule, MatInputModule],
-  templateUrl: './create-page.component.html',
-  styleUrl: './create-page.component.css'
+    selector: 'app-create-page',
+    imports: [NavbarComponent, CollapsiblePanelComponent, RouterLink, MatButtonModule, MatFormFieldModule, MatInputModule],
+    templateUrl: './create-page.component.html',
+    styleUrl: './create-page.component.css'
 })
 export class CreatePageComponent {
   isHidden: boolean = true;

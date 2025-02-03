@@ -8,11 +8,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, MainPageComponent, CreatePageComponent, AboutPageComponent, ModesPageComponent, NavbarComponent ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [RouterOutlet, MainPageComponent, CreatePageComponent, AboutPageComponent, ModesPageComponent, NavbarComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'SQuiz';

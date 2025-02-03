@@ -11,12 +11,11 @@ import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from "@angular/forms";
 
 @Component({
-  selector: 'app-collapsible-panel',
-  standalone: true,
-  imports: [AnswerInputComponent, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule, MatSelectModule, FormsModule],
-  templateUrl: './collapsible-panel.component.html',
-  styleUrl: './collapsible-panel.component.css',
-  providers: [provideNativeDateAdapter()],
+    selector: 'app-collapsible-panel',
+    imports: [AnswerInputComponent, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatButtonModule, MatSelectModule, FormsModule],
+    templateUrl: './collapsible-panel.component.html',
+    styleUrl: './collapsible-panel.component.css',
+    providers: [provideNativeDateAdapter()]
 })
 export class CollapsiblePanelComponent {
   questionTitle = 'Question';

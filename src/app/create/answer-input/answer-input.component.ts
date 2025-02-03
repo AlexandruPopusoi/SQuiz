@@ -6,11 +6,10 @@ import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
-  selector: 'app-answer-input',
-  standalone: true,
-  imports: [FormsModule, MatCheckboxModule, MatInputModule, MatFormFieldModule],
-  templateUrl: './answer-input.component.html',
-  styleUrl: './answer-input.component.css'
+    selector: 'app-answer-input',
+    imports: [FormsModule, MatCheckboxModule, MatInputModule, MatFormFieldModule],
+    templateUrl: './answer-input.component.html',
+    styleUrl: './answer-input.component.css'
 })
 export class AnswerInputComponent {
   input = '';
