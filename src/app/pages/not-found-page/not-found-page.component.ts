@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from "../../navbar/navbar.component";
+import { NavbarComponent } from '../../navbar/navbar.component';
 import { CardComponent } from '../../card/card.component';
 
 @Component({
-    selector: 'app-not-found-page',
-    imports: [NavbarComponent, NotFoundPageComponent, CardComponent],
-    templateUrl: './not-found-page.component.html',
-    styleUrl: './not-found-page.component.css'
+  selector: 'app-not-found-page',
+  imports: [NavbarComponent, NotFoundPageComponent, CardComponent],
+  templateUrl: './not-found-page.component.html',
+  styleUrl: './not-found-page.component.css',
 })
-export class NotFoundPageComponent {
-
-}
+export class NotFoundPageComponent {}

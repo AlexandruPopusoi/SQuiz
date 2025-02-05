@@ -1,12 +1,12 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'app-card',
-    imports: [],
-    templateUrl: './card.component.html',
-    styleUrl: './card.component.css'
+  selector: 'app-card',
+  imports: [],
+  templateUrl: './card.component.html',
+  styleUrl: './card.component.css',
 })
 export class CardComponent {
-    @Input({required:true}) text!:string;
-    @Input({required:true}) title!:string;
+  @Input({ required: true }) text!: string;
+  @Input({ required: true }) title!: string;
 }

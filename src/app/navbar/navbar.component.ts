@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
-    selector: 'app-navbar',
-    imports: [RouterLink, RouterLinkActive, RouterOutlet, NgClass],
-    templateUrl: './navbar.component.html',
-    styleUrl: './navbar.component.css'
+  selector: 'app-navbar',
+  imports: [RouterLink, RouterLinkActive, RouterOutlet, NgClass],
+  templateUrl: './navbar.component.html',
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
   isHidden = true;
@@ -14,10 +14,10 @@ export class NavbarComponent {
     { title: 'Home', url: '/app-main-page' },
     { title: 'Modes', url: '/app-modes-page' },
     { title: 'Create', url: '/app-create-page' },
-    { title: 'About', url: '/app-about-page' }
+    { title: 'About', url: '/app-about-page' },
   ];
 
-  triggerNavbar(){
+  triggerNavbar() {
     this.isHidden = !this.isHidden;
   }
 }

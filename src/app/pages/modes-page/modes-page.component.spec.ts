@@ -8,10 +8,9 @@ describe('ModesPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModesPageComponent]
-    })
-    .compileComponents();
-    
+      imports: [ModesPageComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(ModesPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

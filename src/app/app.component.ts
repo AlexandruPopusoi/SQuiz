@@ -6,12 +6,18 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ModesPageComponent } from './pages/modes-page/modes-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-
 @Component({
-    selector: 'app-root',
-    imports: [RouterOutlet, MainPageComponent, CreatePageComponent, AboutPageComponent, ModesPageComponent, NavbarComponent],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css'
+  selector: 'app-root',
+  imports: [
+    RouterOutlet,
+    MainPageComponent,
+    CreatePageComponent,
+    AboutPageComponent,
+    ModesPageComponent,
+    NavbarComponent,
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'SQuiz';

@@ -1,28 +1,27 @@
 import { Injectable } from '@angular/core';
 
 interface IQuestion {
-  questionTitle: string,
-  questionType: string,
-  answer: string[],
-  correctAnswer: number[]
+  questionTitle: string;
+  questionType: string;
+  answer: string[];
+  correctAnswer: number[];
 }
 
 interface IQuiz {
-  quizID: number,
-  quizTitle: string,
-  questionsArray: IQuestion[]
+  quizID: number;
+  quizTitle: string;
+  questionsArray: IQuestion[];
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class QuizProcessorService {
-
   constructor() {
     const quizes = localStorage.getItem('quizes');
 
     if (quizes) {
-      this.quizArray = JSON.parse(quizes)
+      this.quizArray = JSON.parse(quizes);
     }
   }
 
@@ -33,26 +32,26 @@ export class QuizProcessorService {
       questionTitle: '',
       questionType: 'Quiz',
       answer: [],
-      correctAnswer: []
-    }
+      correctAnswer: [],
+    },
   ];
 
-  quizArray: IQuiz[] = []
+  quizArray: IQuiz[] = [];
 
   finishQuiz() {
     let id = 0;
     try {
       id = this.quizArray[this.quizArray.length - 1].quizID;
     } catch (error) {
+      console.log(error);
       id = 0;
     }
-    this.quizArray.push(
-      {
-        quizID: id + 1,
-        quizTitle: this.quizTitle,
-        questionsArray: this.questionsArray
-      })
-    localStorage.setItem('quizes', JSON.stringify(this.quizArray))
+    this.quizArray.push({
+      quizID: id + 1,
+      quizTitle: this.quizTitle,
+      questionsArray: this.questionsArray,
+    });
+    localStorage.setItem('quizes', JSON.stringify(this.quizArray));
   }
 
   getQuestions() {
@@ -64,15 +63,16 @@ export class QuizProcessorService {
   }
 
   addQuestion() {
-    this.questionsArray.push(
-      {
-        questionTitle: '',
-        questionType: 'Quiz',
-        answer: [],
-        correctAnswer: []
-      })
-    console.log(this.questionsArray)
-    setTimeout(() => { document.documentElement.scrollTo(0, document.body.scrollHeight + 100) }, 0.001);
+    this.questionsArray.push({
+      questionTitle: '',
+      questionType: 'Quiz',
+      answer: [],
+      correctAnswer: [],
+    });
+    console.log(this.questionsArray);
+    setTimeout(() => {
+      document.documentElement.scrollTo(0, document.body.scrollHeight + 100);
+    }, 0.001);
   }
 
   deleteQuestion(id: number) {
@@ -108,5 +108,4 @@ export class QuizProcessorService {
     }
     console.log(this.questionsArray[id]);
   }
-
 }
